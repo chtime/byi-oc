@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello
+  labels:
+    app: hello
+  namespace: openshift-operators
+spec:
+  destination:
+    namespace: hello
+    server: 'https://kubernetes.default.svc'
+    name: kubernetes default
+  source:
+    repoURL: github.com/chtime/byi-oc
+    path: argocd/hello
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  project: hello
+  revisionHistoryLimit: 1
+
