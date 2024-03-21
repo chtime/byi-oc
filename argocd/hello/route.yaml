@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello 
+  namespace: hello
+spec:
+  host: hello.apps-crc.testing
+  port:
+    targetPort: http
+  tls:
+    termination: edge 
+  to:
+    kind: Service
+    name: hello 
+    weight: 100
+
