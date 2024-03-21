@@ -20,10 +20,22 @@ kubectl -n argocd get secret argocd-instance-cluster -o jsonpath='{.data.admin\.
 
 You can also refer to the official [operator examples on GitHub](https://github.com/argoproj-labs/argocd-operator).
 
+Things to note:
+- AppProjects place some restrictions on which repositories can be deployed to which clusters and namespaces and some other features (like sync windows).
+- ArgoCD comes with an AppProject `default`; any application without an explicit `project` attribute in its spec will be placed here. This AppProject does not impose any restrictions.
+- ArgoCD is - by OpenShift's default operator setup - not allowed to create cluster-level resources such as namespaces. Hence you either need to change that setting (out of scope for this documentation) or manually create such resources (e.g. using `oc new-project` which creates a namespace).
 
+## Deploy an ArgoCD Application in an AppProject
 
 ```bash
+# Create the OC project & namespace
 oc new-project hello
-# once the operator is available, deploy an ArgoCD instance.
-kubectl apply -f https://github.com/chtime/byi-oc/argocd/hello/argo-app.yaml
+# Create the AppProject called "demo"
+kubectl apply -f argocd/proj-demo.yaml
+# Add the application "hello", which is a part of that project
+kubectl apply -f argocd/app-hello.yaml
 ```
+
+You can follow the creation of the resources in [ArgoCD](https://argocd.apps-crc.testing/applications/argocd/hello?view=tree&resource=), in the event console (`kubectl get events -A -w`) or in the [OpenShift Cluster Console](https://console-openshift-console.apps-crc.testing/k8s/ns/hello/apps~v1~Deployment). 
+As soon as the pods are stable, you should be able to get responses from different pods under [hello.apps-crc.testing](https://hello.apps-crc.testing/).
+
