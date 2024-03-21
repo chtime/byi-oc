@@ -4,12 +4,15 @@ metadata:
   name: hello
   labels:
     app: hello
-  namespace: openshift-operators
+  namespace: argocd 
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+
 spec:
+  project: demo
   destination:
     namespace: hello
     server: 'https://kubernetes.default.svc'
-    name: kubernetes default
   source:
     repoURL: github.com/chtime/byi-oc
     path: argocd/hello
@@ -17,7 +20,17 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
-  project: hello
+      selfHeal: true 
+    syncOptions:
+      - CreateNamespace=false
+      - PruneLast=true
   revisionHistoryLimit: 1
 
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello
+  labels:
+    # allow argocd to manage resources here
+    argocd.argoproj.io/managed-by: argocd

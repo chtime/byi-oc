@@ -18,7 +18,7 @@ spec:
       enabled: true
     host: argocd.apps-crc.testing
   banner:
-    content: Roll For Initiative!
+    content: https://github.com/chtime/byi-oc
   sso:
     dex:
       resources:
