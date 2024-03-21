@@ -16,10 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-ingress
-        image: nginxdemos/hello
+        # this is an image variant of nginxdemos/hello that runs unprivileged
+        image: shiwaforce/openshift-nginx-hello
         ports:
-        - containerPort: 80
-        resources:
-          limits:
-            cpu: 1m
-            memory: 10Mi
+        - containerPort: 8080

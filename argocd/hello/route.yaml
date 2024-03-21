@@ -3,10 +3,15 @@ kind: Route
 metadata:
   name: hello 
   namespace: hello
+  annotations:
+    haproxy.router.openshift.io/balance: roundrobin
+    # disabling cookies disables session stickiness, so a user actually sees the round robin happening.
+    haproxy.router.openshift.io/disable_cookies: "true"
 spec:
   host: hello.apps-crc.testing
   port:
-    targetPort: http
+    # note that this is not the port on the service, but on the pods!
+    targetPort: 8080 # "http" would also work
   tls:
     termination: edge 
   to:
