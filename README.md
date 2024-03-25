@@ -8,5 +8,6 @@ Please head over to [the documentation folder](docs/).
 
 ## Contact
 
-You can open an issue or pull request here.
+You can open an issue or pull request here. May the DevMOps be with you.
 
+![DevMOps](./.assets/devmops.jpg)
