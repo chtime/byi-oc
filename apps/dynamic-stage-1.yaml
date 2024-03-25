@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/chtime/byi-oc'
     targetRevision: main
-    path: apps/dynamic-stages
+    path: apps/dynamic-stage
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'ds'
