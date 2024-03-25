@@ -9,9 +9,9 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 
 spec:
-  project: demo
+  project: default
   destination:
-    namespace: hello
+    namespace: ds
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://github.com/chtime/byi-oc'
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: dynamic-stages
+  name: ds
   labels:
     # allow argocd to manage resources here
     argocd.argoproj.io/managed-by: argocd
