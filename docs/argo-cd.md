@@ -4,6 +4,10 @@
 2. Install the [ArgoCD Operator](https://console-openshift-console.apps-crc.testing/operatorhub/all-namespaces?keyword=argocd&details-item=argocd-operator-community-operators-openshift-marketplace&channel=alpha&version=0.8.0)
     - It may be beneficial to customize the "Installed Namespace" to match ArgoCDs default documentation examples: "argocd".
     - The following examples (particularly the resource definitions straight from yaml) will also expect the namespace to be "argocd".
+    - Alternatively, use the provided operator resource definition:
+```bash
+kubectl apply -f argocd/argocd-operator.yaml
+```
 3. Start an ArgoCD instance, either by navigating to Operators > Installed Operators > Argo CD > Argo CD > Create ArgoCD or by deploying the following yaml:
 ```bash 
 kubectl apply -f argocd/argocd-instance.yaml
