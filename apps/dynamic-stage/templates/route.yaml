@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: dynamic-stage-{{ .Values.StageName }}
+  namespace: ds
+spec:
+  host: dynamic-stage-{{ .Values.StageName }}.apps-crc.testing
+  port:
+    targetPort: http
+  tls:
+    termination: edge 
+  to:
+    kind: Service
+    name: dynamic-stage-{{ .Values.StageName }}
+    weight: 100
+

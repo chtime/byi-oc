@@ -1,0 +1,4 @@
+apiVersion: v2
+name: dynamic-stage
+description: A Helm chart for deploying dynamic stages for var-echo
+version: 1.0.0
