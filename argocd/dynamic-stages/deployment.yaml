@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: dynamic-stages
-        image: nginx
+        image: image-registry.openshift-image-registry.svc:5000/ds/var-echo
         ports:
         - containerPort: 8080
