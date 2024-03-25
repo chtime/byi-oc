@@ -1,27 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dynamic-stages
+  name: hello
   labels:
-    app: dynamic-stages
+    app: hello
   namespace: argocd 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 
 spec:
-  project: default
+  project: demo
   destination:
-    namespace: ds
+    namespace: hello
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://github.com/chtime/byi-oc'
-    path: argocd/dynamic-stages
+    path: argocd/hello
     targetRevision: master
   syncPolicy:
     automated:
       prune: true
       selfHeal: true 
     syncOptions:
+      - CreateNamespace=false
       - PruneLast=true
   revisionHistoryLimit: 1
 
@@ -29,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: dynamic-stages
+  name: hello
   labels:
     # allow argocd to manage resources here
     argocd.argoproj.io/managed-by: argocd
