@@ -3,3 +3,6 @@ kind: ImageStream
 metadata:
   name: var-echo
   namespace: ds
+spec:
+  lookupPolicy:
+    local: true

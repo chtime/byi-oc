@@ -4,7 +4,7 @@ metadata:
   name: dynamic-stages
   namespace: ds
 spec:
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dynamic-stages
-        image: image-registry.openshift-image-registry.svc:5000/ds/var-echo
+        image: var-echo # this is possible because if configs in the image-stream
         env:
           - name: LE_ENV_VAR
             value: asdf
