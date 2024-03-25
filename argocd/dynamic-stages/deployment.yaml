@@ -17,5 +17,8 @@ spec:
       containers:
       - name: dynamic-stages
         image: image-registry.openshift-image-registry.svc:5000/ds/var-echo
+        env:
+          - name: LE_ENV_VAR
+            value: asdf
         ports:
         - containerPort: 8080
