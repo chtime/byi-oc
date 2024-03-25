@@ -6,8 +6,7 @@ metadata:
 spec:
   host: dynamic-stages.apps-crc.testing
   port:
-    # note that this is not the port on the service, but on the pods!
-    targetPort: 80
+    targetPort: http
   tls:
     termination: edge 
   to:
