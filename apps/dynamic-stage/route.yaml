@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: dynamic-stages 
+  namespace: ds
+spec:
+  host: dynamic-stages.apps-crc.testing
+  port:
+    # note that this is not the port on the service, but on the pods!
+    targetPort: 80
+  tls:
+    termination: edge 
+  to:
+    kind: Service
+    name: dynamic-stages 
+    weight: 100
+
