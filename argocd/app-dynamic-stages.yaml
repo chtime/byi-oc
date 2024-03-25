@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello
+  name: dynamic-stages
   labels:
-    app: hello
+    app: dynamic-stages
   namespace: argocd 
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -15,7 +15,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://github.com/chtime/byi-oc'
-    path: argocd/hello
+    path: argocd/dynamic-stages
     targetRevision: master
   syncPolicy:
     automated:
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: hello
+  name: dynamic-stages
   labels:
     # allow argocd to manage resources here
     argocd.argoproj.io/managed-by: argocd
