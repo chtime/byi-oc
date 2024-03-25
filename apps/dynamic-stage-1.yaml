@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: THE_STAGE_NAME
+  name: dynamic-stage-one
   namespace: argocd
 spec:
   project: default
@@ -16,4 +16,4 @@ spec:
     automated: {}
   env:
   - name: LE_ENV_VAR
-    value: value1
+    value: env-var-on-dynamic-stage-one
