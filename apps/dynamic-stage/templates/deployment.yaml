@@ -16,6 +16,9 @@ spec:
     spec:
       containers:
       - name: dynamic-stage-{{ .Values.StageName }}
-        image: var-echo:{{ .Values.Revision }}
+        image: {{ printf "var-echo:%s" .Values.Revision }}
         ports:
         - containerPort: 8080
+        env:
+        - name: LE_ENV_VAR
+          value: env-var-on-dynamic-stage-{{ .Values.StageName }}
