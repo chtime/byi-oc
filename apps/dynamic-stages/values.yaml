@@ -1,5 +1,5 @@
 stages:
   - name: one
-    revision: latest
+    revision: HEAD
   - name: two
-    revision: latest
+    revision: HEAD
