@@ -2,7 +2,7 @@
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: dynamic-stages-{{ .name }}
+  name: dynamic-stage-{{ .name }}
   namespace: dynamic-stages
 spec:
   triggers:
