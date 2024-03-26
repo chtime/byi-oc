@@ -1,17 +1,19 @@
+{{- range .stages }}
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: dynamic-stages
+  name: dynamic-stages-{{ .name }}
   namespace: dynamic-stages
 spec:
-  triggers: 
-    - type: "GitHub"
-      github:
-        secret: "secret101"
+  triggers:
+    type: "ConfigChange"
   source: 
     git:
       uri: "https://github.com/chtime/var-echo"
+      ref: {{ .revision }}
   output: 
     to:
       kind: "ImageStreamTag"
-      name: "var-echo:latest"
+      name: {{ printf "var-echo:%s" .revision }}
+---
+{{- end }}
