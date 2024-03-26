@@ -10,7 +10,6 @@ spec:
   source: 
     git:
       uri: "https://github.com/chtime/var-echo"
-      ref: {{ .revision }}
   output: 
     to:
       kind: "ImageStreamTag"
