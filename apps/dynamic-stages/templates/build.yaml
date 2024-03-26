@@ -6,7 +6,7 @@ metadata:
   namespace: dynamic-stages
 spec:
   triggers:
-    type: "ConfigChange"
+    - type: "ConfigChange"
   source: 
     git:
       uri: "https://github.com/chtime/var-echo"
