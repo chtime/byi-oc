@@ -4,7 +4,6 @@ apiVersion: build.openshift.io/v1
 metadata:
   name: dynamic-stage-{{ .name }}
   namespace: dynamic-stages
-  argocd.argoproj.io/sync-wave: "-1"
 spec:
   triggers:
     - type: "ConfigChange"
