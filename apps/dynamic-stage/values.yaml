@@ -1,5 +1,0 @@
-stages:
-  - name: the-first-stage
-    revision: latest
-  - name: the-second-stage
-    revision: latest

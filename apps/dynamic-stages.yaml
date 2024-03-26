@@ -8,10 +8,14 @@ spec:
   source:
     repoURL: 'https://github.com/chtime/byi-oc'
     targetRevision: master
-    path: apps/dynamic-stage
+    path: apps/dynamic-stages
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: 'ds'
+    namespace: 'dynamic-stages'
   syncPolicy:
     automated: {}
-  
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Namespace
+metadata:
+  name: dynamic-stages

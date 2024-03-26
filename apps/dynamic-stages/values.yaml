@@ -1,0 +1,5 @@
+stages:
+  - name: one
+    revision: latest
+  - name: two
+    revision: latest
