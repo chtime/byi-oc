@@ -1,4 +1,4 @@
-{{- range .stages }}
+{{- range .Values.stages }}
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
