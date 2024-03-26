@@ -1,0 +1,9 @@
+apiVersion: maistra.io/v1
+kind: ServiceMeshMember
+metadata:
+  name: default
+  namespace: unguard
+spec:
+  controlPlaneRef:
+    name: sm-ctrl
+    namespace: servicemesh

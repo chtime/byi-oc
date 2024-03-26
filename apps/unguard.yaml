@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: unguard
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/chtime/unguard'
+    targetRevision: main
+    path: chart
+    helm:
+      values: |
+        enableIstioSidecar: true
+        enableJaegerSidecar: true
+        localDev:
+          enabled: true
+          host: unguard.apps-crc.testing
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: unguard
+  syncPolicy:
+    automated:
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: unguard-mariadb
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://charts.bitnami.com/bitnami'
+    targetRevision: 17.0.1
+    chart: mariadb
+    helm:
+      values: |
+        primary:
+          persistence:
+            enabled: false
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: unguard
+  syncPolicy:
+    automated:
+      selfHeal: true

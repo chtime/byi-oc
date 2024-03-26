@@ -1,0 +1,9 @@
+kind: ServiceMeshMember
+apiVersion: maistra.io/v1
+metadata:
+  name: default
+  namespace: argocd
+spec:
+  controlPlaneRef:
+    name: basic
+    namespace: control-plane-namespace

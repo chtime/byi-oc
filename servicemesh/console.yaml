@@ -1,0 +1,10 @@
+apiVersion: kiali.io/v1alpha1
+kind: OSSMConsole
+metadata:
+  name: ossmconsole
+  namespace: servicemesh
+spec:
+  version: default
+  kiali:
+    serviceName: 'kiali'
+    serviceNamespace: 'servicemesh'
