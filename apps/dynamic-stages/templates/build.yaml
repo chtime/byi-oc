@@ -10,7 +10,12 @@ spec:
   source: 
     git:
       uri: "https://github.com/chtime/var-echo"
-  output: 
+  strategy:
+    dockerStrategy:
+      env:
+        - name: "LE_ENV_VAR"
+          value: "i am buildconfig"
+  output:
     to:
       kind: "ImageStreamTag"
       name: {{ printf "var-echo:%s" .revision }}
