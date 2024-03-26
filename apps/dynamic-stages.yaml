@@ -13,13 +13,4 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: 'dynamic-stages'
   syncPolicy:
-    automated: {}
-  ignoreDifferences:
-    - group: image.openshift.io
-      kind: ImageStream
-      jsonPointers:
-        - /spec
-    - group: apps.openshift.io
-      kind: DeploymentConfig
-      jsonPointers:
-        - /spec
+    automated: { }
