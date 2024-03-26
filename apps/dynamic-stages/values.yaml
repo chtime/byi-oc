@@ -1,7 +1,0 @@
-stages:
-  - name: stage1
-    revision: HEAD
-  - name: stage2
-    revision: HEAD
-  - name: stage3
-    revision: HEAD
