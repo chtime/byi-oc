@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: dynamic-stage-{{ .name }}
   namespace: dynamic-stages
+  annotations:
+    argocd.argoproj.io/sync-wave: '10'
 spec:
   replicas: 3
   revisionHistoryLimit: 0
