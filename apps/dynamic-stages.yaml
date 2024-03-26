@@ -14,10 +14,4 @@ spec:
     namespace: 'dynamic-stages'
   syncPolicy:
     automated: {}
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: dynamic-stages
-  labels:
-    argocd.argoproj.io/managed-by: argocd
+
