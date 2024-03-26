@@ -13,6 +13,5 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: 'dynamic-stages'
   syncPolicy:
-    automated: { }
-    syncOptions:
-    - Prune=true
+    automated:
+      prune: true
