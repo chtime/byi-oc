@@ -3,7 +3,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: dynamic-stage-{{ .name }}
-  namespace: ds
+  namespace: dynamic-stages
 spec:
   host: dynamic-stage-{{ .name }}.apps-crc.testing
   port:

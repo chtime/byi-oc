@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dynamic-stage-{{ .name }}
-  namespace: ds
+  namespace: dynamic-stages
 spec:
   replicas: 3
   revisionHistoryLimit: 0
