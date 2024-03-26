@@ -1,7 +1,8 @@
+{{- range .Values.stages }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: dynamic-stage-{{ .Values.StageName }}
+  name: dynamic-stage-{{ .Values.name }}
   namespace: ds
 spec:
   ports:
@@ -9,4 +10,6 @@ spec:
     port: 80
     targetPort: 8080
   selector:
-    app: dynamic-stage-{{ .Values.StageName }}
+    app: dynamic-stage-{{ .Values.name }}
+---
+{{- end }}
