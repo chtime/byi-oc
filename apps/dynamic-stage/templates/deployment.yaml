@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dynamic-stage-{{ .Values.name }}
+  name: dynamic-stage-{{ .name }}
   namespace: ds
 spec:
   replicas: 3
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: dynamic-stage-{{ .Values.name }}
+      app: dynamic-stage-{{ .name }}
   template:
     metadata:
       labels:
-        app: dynamic-stage-{{ .Values.name }}
+        app: dynamic-stage-{{ .name }}
     spec:
       containers:
-      - name: dynamic-stage-{{ .Values.name }}
-        image: {{ printf "var-echo:%s" .Values.revision }}
+      - name: dynamic-stage-{{ .name }}
+        image: {{ printf "var-echo:%s" .revision }}
         ports:
         - containerPort: 8080
         env:
         - name: LE_ENV_VAR
-          value: env-var-on-dynamic-stage-{{ .Values.name }}
+          value: env-var-on-dynamic-stage-{{ .name }}
 ---
 {{- end }}
