@@ -1,0 +1,31 @@
+{{- range .Values.stages }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .chartName }}
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/chtime/var-echo'
+    targetRevision: {{ .revision }}
+    path: helm
+    helm:
+      parameters:
+        - name: chartName
+          value: {{ .chartName }}
+        - name: stage
+          value: {{ .stage }}
+        - name: namespace
+          value: {{ .namespace }}
+        - name: revision
+          value: {{ .revision }}
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+{{- end}}
