@@ -23,7 +23,7 @@ spec:
       selfHeal: true 
     syncOptions:
       - PruneLast=true
-  revisionHistoryLimit: 1
+  refHistoryLimit: 1
 
 ---
 apiVersion: v1

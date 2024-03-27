@@ -24,7 +24,7 @@ spec:
     syncOptions:
       - CreateNamespace=false
       - PruneLast=true
-  revisionHistoryLimit: 1
+  refHistoryLimit: 1
 
 ---
 apiVersion: v1

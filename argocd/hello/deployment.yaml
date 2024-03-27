@@ -5,7 +5,7 @@ metadata:
   namespace: hello 
 spec:
   replicas: 3
-  revisionHistoryLimit: 0
+  refHistoryLimit: 0
   selector:
     matchLabels:
       app: hello

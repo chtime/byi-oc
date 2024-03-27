@@ -5,7 +5,7 @@ metadata:
   namespace: ds
 spec:
   replicas: 1
-  revisionHistoryLimit: 0
+  refHistoryLimit: 0
   selector:
     matchLabels:
       app: dynamic-stages

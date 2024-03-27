@@ -2,16 +2,16 @@ stages:
   - chartName: var-echo-main
     stage: dev
     namespace: dev
-    revision: main
+    ref: main
   - chartName: var-echo-644c10f
     stage: dev
     namespace: dev
-    revision: 644c10f
+    ref: 644c10f
   - chartName: var-echo-the-same
     stage: dev
     namespace: dev
-    revision: 644c10f
+    ref: 644c10f
   - chartName: var-echo-another
     stage: dev
     namespace: dev
-    revision: 953f357
+    ref: 953f357
