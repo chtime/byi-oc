@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: 'https://github.com/chtime/var-echo'
     targetRevision: {{ .ref }}
-    path: helm
+    path: helm/revision-inject
     helm:
       parameters:
         - name: chartName
