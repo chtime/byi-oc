@@ -11,7 +11,7 @@ stages:
     stage: dev
     namespace: dev
     revision: 953f357
-  - chartName: var-echo-953f357
+  - chartName: var-echo-c41a2bc
     stage: dev
     namespace: dev
-    revision: 953f357
+    revision: c41a2bc
