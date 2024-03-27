@@ -1,17 +1,5 @@
 stages:
-  - chartName: var-echo-main
+  - chartName: var-echo-special
     stage: dev
     namespace: dev
-    ref: main
-  - chartName: var-echo-644c10f
-    stage: dev
-    namespace: dev
-    ref: 644c10f
-  - chartName: var-echo-the-same
-    stage: dev
-    namespace: dev
-    ref: 644c10f
-  - chartName: var-echo-another
-    stage: dev
-    namespace: dev
-    ref: 953f357
+    ref: build-when-new-branch
