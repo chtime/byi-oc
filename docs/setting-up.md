@@ -30,6 +30,25 @@ To authenticate your cluster against Red Hats container registry, start it point
 crc start -p ~/Downloads/pull-secret
 ```
 
+<details>
+<summary>Troubleshooting Windows 🪟</summary>
+#### ⚡Issue: Windows user not part of Hyper-V Administrators
+
+To determine which users are members of the "Hyper-V Administrators" group, execute the following command:
+```PowerShell
+Get-LocalGroupMember -Group "Hyper-V Administrators"
+```
+To add the current user to this group, use the following command (Suggestions: restart the computer afterwards):
+```PowerShell
+([adsi]"WinNT://./Hyper-V Administrators,group").Add("WinNT://$env:UserDomain/$env:Username,user")
+```
+
+#### ⚡Issue: Port 80 is blocked
+If this happens Branch Chaching needs to be disabled. This issue might arise even after applying Disable-BC and restarting the computer.
+```PowerShell
+Disable-BC
+```
+
 ## Configuration
 
 You may check or change configuration of cluster configuration params:
