@@ -7,7 +7,11 @@ stages:
     stage: dev
     namespace: dev
     revision: 644c10f
-  - chartName: var-echo-another
+  - chartName: var-echo-the-same
     stage: dev
     namespace: dev
     revision: 644c10f
+  - chartName: var-echo-another
+    stage: dev
+    namespace: dev
+    revision: 953f357
