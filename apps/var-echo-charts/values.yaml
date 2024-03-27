@@ -15,3 +15,7 @@ stages:
     stage: dev
     namespace: dev
     revision: 953f357
+  - chartName: var-echo-adujst
+    stage: dev
+    namespace: dev
+    revision: 953f357
