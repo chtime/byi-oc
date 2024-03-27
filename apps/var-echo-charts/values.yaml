@@ -2,4 +2,4 @@ stages:
   - chartName: var-echo-special
     stage: dev
     namespace: dev
-    ref: build-when-new-branch
+    ref: build-when-necessary
