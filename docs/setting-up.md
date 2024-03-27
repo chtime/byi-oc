@@ -44,19 +44,10 @@ To add the current user to this group, use the following command (Suggestions: r
 ```
 
 #### ⚡Issue: Port 80 is blocked
-To identify the process using port 80, execute the following command:
+If this happens Branch Chaching needs to be disabled. This issue might arise even after applying Disable-BC and restarting the computer.
 ```PowerShell
-netstat -aon | findStr /i "LISTENING" | findStr ":80"
+Disable-BC
 ```
-If the process has PID 4, it indicates that the system is using it, possibly due to the HTTP service running. To temporarily stop the HTTP service, use:
-```PowerShell
-net stop http /y
-```
-Note that the service may restart automatically. To permanently disable it, set the Registry key at Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP from 3 to 4 (disabled).
-
-#### ⚡Issue: Running a VPN client
-When starting crc, access to the hosts file is necessary. Some VPN clients may restrict access to this file. Either disable this restriction within the VPN client's settings or terminate the client temporarily.
-</details>
 
 ## Configuration
 
