@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/chtime/var-echo'
-    targetRevision: {{ .revision }}
+    targetRevision: {{ .ref }}
     path: helm
     helm:
       parameters:
@@ -18,8 +18,8 @@ spec:
           value: {{ .stage }}
         - name: namespace
           value: {{ .namespace }}
-        - name: revision
-          value: {{ .revision }}
+        - name: ref
+          value: {{ .ref }}
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+data:
+  configManagementPlugins: |
+    - name: inject-revision
+      generate:
+        command: ["bash", "-c"]
+        args: ["GIT_REVISION=$(git rev-parse --short HEAD) && helm template --set revision=$GIT_REVISION $*"]
