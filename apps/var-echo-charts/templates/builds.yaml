@@ -17,4 +17,5 @@ spec:
     to:
       kind: ImageStreamTag
       name: "var-echo:{{ .revision }}"
+---
 {{- end }}
