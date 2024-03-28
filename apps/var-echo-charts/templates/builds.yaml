@@ -2,17 +2,17 @@
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: var-echo-{{ .Values.revision }}
+  name: var-echo-{{ .revision }}
   namespace: dev
 spec:
   source:
     git:
       uri: "https://github.com/chtime/var-echo"
-      ref: {{ .Values.revision }}
+      ref: {{ .revision }}
   strategy:
     type: Docker
   output:
     to:
       kind: ImageStreamTag
-      name: "var-echo:{{ .Values.revision }}"
+      name: "var-echo:{{ .revision }}"
 {{- end }}
