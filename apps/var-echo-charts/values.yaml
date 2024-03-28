@@ -1,28 +1,8 @@
 stages:
-  # - chartName: var-echo-prod
-  #   stage: prod
-  #   namespace: prod
-  #   revision: c164c0e
-  # - chartName: var-echo-int
-  #   stage: int
-  #   namespace: int
-  #   revision: c164c0e
-  # - chartName: var-echo-test
-  #   stage: test
-  #   namespace: test
-  #   revision: c164c0e
-  - chartName: var-echo-dev
+  - chartName: var-echo
     stage: dev
     namespace: dev
     revision: c164c0e
-  - chartName: var-echo-custom-1
-    stage: dev
-    namespace: dev
-    revision: c164c0e
-  - chartName: var-echo-custom-2
-    stage: dev
-    namespace: dev
-    revision: 9d46f14
 
 # 9d46f14
 # c164c0e
