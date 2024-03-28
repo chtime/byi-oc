@@ -2,7 +2,7 @@ stages:
   - chartName: var-echo-9d46f14-1
     stage: dev
     namespace: dev
-    revision: fb220d8
+    revision: 9d46f14
   - chartName: var-echo-9d46f14-2
     stage: dev
     namespace: dev
