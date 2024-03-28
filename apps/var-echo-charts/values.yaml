@@ -1,17 +1,17 @@
-stages:
-  - chartName: var-echo-644c10f
-    stage: dev
-    namespace: dev
-    revision: 644c10f
-  - chartName: var-echo-644c10f-2
-    stage: dev
-    namespace: dev
-    revision: 644c10f
-  - chartName: var-echo-953f357
-    stage: dev
-    namespace: dev
-    revision: 953f357
-  - chartName: var-echo-c41a2bc
-    stage: dev
-    namespace: dev
-    revision: c41a2bc
+stages: []
+  # - chartName: var-echo-644c10f
+  #   stage: dev
+  #   namespace: dev
+  #   revision: 644c10f
+  # - chartName: var-echo-644c10f-2
+  #   stage: dev
+  #   namespace: dev
+  #   revision: 644c10f
+  # - chartName: var-echo-953f357
+  #   stage: dev
+  #   namespace: dev
+  #   revision: 953f357
+  # - chartName: var-echo-c41a2bc
+  #   stage: dev
+  #   namespace: dev
+  #   revision: c41a2bc
