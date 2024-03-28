@@ -1,4 +1,4 @@
-{{ range .Values.stages }}
+{{- range .Values.stages }}
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
@@ -15,5 +15,4 @@ spec:
     to:
       kind: ImageStreamTag
       name: "var-echo:{{ .Values.revision }}"
----
-{{ end }}
+{{- end }}
