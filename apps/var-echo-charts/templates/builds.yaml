@@ -5,6 +5,8 @@ metadata:
   name: var-echo-{{ .revision }}
   namespace: dev
 spec:
+  triggers:
+  - type: ConfigChange
   source:
     git:
       uri: "https://github.com/chtime/var-echo"
