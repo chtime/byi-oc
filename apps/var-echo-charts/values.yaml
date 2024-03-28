@@ -1,5 +1,13 @@
 stages:
-  - chartName: var-echo-772575a
+  - chartName: var-echo-ce4c8fc
     stage: dev
     namespace: dev
-    revision: 772575a
+    revision: ce4c8fc
+  - chartName: var-echo-e81b88e
+    stage: dev
+    namespace: dev
+    revision: e81b88e
+  - chartName: var-echo-e81b88e-2
+    stage: dev
+    namespace: dev
+    revision: e81b88e
