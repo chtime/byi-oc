@@ -1,4 +1,17 @@
 stages:
+  # Other namespaces than dev are not yet supported because the image stream is not available in other namespaces
+  # - chartName: var-echo-prod
+  #   stage: prod
+  #   namespace: prod
+  #   revision: c164c0e
+  # - chartName: var-echo-int
+  #   stage: int
+  #   namespace: int
+  #   revision: c164c0e
+  # - chartName: var-echo-test
+  #   stage: test
+  #   namespace: test
+  #   revision: c164c0e
   - chartName: var-echo-dev
     stage: dev
     namespace: dev
