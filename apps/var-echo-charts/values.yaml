@@ -2,7 +2,8 @@ stages:
   - chartName: var-echo
     stage: dev
     namespace: dev
-    revision: c164c0e
+    revision: 322c87e
 
-# 9d46f14
-# c164c0e
+# 4ee0cb7 (before change)
+# 322c87e (typo)
+# TODO (fix)
