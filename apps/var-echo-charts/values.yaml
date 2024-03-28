@@ -1,5 +1,4 @@
 stages:
-  # Other namespaces than dev are not yet supported because the image stream is not available in other namespaces
   # - chartName: var-echo-prod
   #   stage: prod
   #   namespace: prod
@@ -24,3 +23,6 @@ stages:
     stage: dev
     namespace: dev
     revision: 9d46f14
+
+# 9d46f14
+# c164c0e
