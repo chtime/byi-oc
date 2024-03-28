@@ -1,21 +1,18 @@
-{{- range .Values.stages }}
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: var-echo-{{ .revision }}
-  namespace: argocd
+  name: var-echo-{{ .Values.revision }}
+  namespace: dev
 spec:
   triggers:
   - type: ConfigChange
   source:
     git:
       uri: "https://github.com/chtime/var-echo"
-      ref: {{ .revision }}
+      ref: {{ .Values.revision }}
   strategy:
     type: Docker
   output:
     to:
       kind: ImageStreamTag
-      name: "var-echo:{{ .revision }}"
----
-{{- end }}
+      name: "var-echo:{{ .Values.revision }}"
