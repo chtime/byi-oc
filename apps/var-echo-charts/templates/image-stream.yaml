@@ -2,7 +2,7 @@ apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
   name: var-echo
-  namespace: argocd
+  namespace: dev
 spec:
   lookupPolicy:
     local: true
