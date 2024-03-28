@@ -3,7 +3,7 @@ kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
   name: var-echo-{{ .Values.revision }}
-  namespace: argocd
+  namespace: dev
 spec:
   source:
     git:
