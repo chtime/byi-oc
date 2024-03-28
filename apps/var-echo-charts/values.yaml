@@ -10,4 +10,4 @@ stages:
   - chartName: var-echo-custom-2
     stage: dev
     namespace: dev
-    revision: c164c0e
+    revision: 9d46f14
